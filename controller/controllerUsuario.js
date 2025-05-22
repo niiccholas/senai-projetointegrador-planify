@@ -9,7 +9,7 @@
 const MESSAGE = require('../modulo/config')
 
 //Import do DAO de usuário
-const usuarioDAO = require('../model/usuario')
+const usuarioDAO = require('../model/usuario.js')
 
 
 //Função para inserir usuário no Banco de dados 
@@ -35,7 +35,7 @@ const inserirUsuario = async function(usuario, contentType){
 
             let resultUsuario = await usuarioDAO.insertUser(usuario)
 
-            if(resultUsuario.status_code == 200){
+            if(resultUsuario){
                 
                 return MESSAGE.SUCCESS_CREATED_ITEM //201
             }else{
@@ -78,7 +78,7 @@ const atualizarUsuario = async function(usuario, id, contentType) {
 
             let resultUsuario = await usuarioDAO.updateUser(usuario)
 
-            if(resultUsuario.status_code == 200){
+            if(resultUsuario){
                 
                 return MESSAGE.SUCCESS_CREATED_ITEM //201
             

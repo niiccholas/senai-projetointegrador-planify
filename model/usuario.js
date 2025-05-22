@@ -18,6 +18,7 @@ const insertUser = async function(usuario){
             return false
         
     } catch (error) {
+        console.log(error)
         return false
     }
 
